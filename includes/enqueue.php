@@ -30,8 +30,8 @@ function main_scripts() {
     $theme = wp_get_theme();
 	wp_dequeue_style( $parenthandle );
 	wp_deregister_style( $parenthandle );
-	wp_register_style( 'wp-bootstrap-starter-style', get_template_directory_uri() . '/style.css', false, $theme->parent()->get('Version') ); 
-	wp_enqueue_style( 'wp-bootstrap-starter-style' );
+	wp_register_style( $parenthandle, get_template_directory_uri() . '/style.css', false, $theme->parent()->get('Version') ); 
+	wp_enqueue_style( $parenthandle );
 	
     wp_enqueue_style( THEME_TEXTDOMAIN, get_stylesheet_directory_uri() . '/assets/css/style.css', $parenthandle, $version );
     wp_enqueue_script( THEME_TEXTDOMAIN, get_stylesheet_directory_uri() . '/assets/js/script-min.js', array(), $version, true );
@@ -92,7 +92,7 @@ function site_inline_scripts() {
 		}
 		//PURCHASE TRACKING
 		//https://docs.woocommerce.com/document/conditional-tags/
-		if(is_wc_endpoint_url( 'order-received' )){
+		if(class_exists( 'WooCommerce' ) && is_wc_endpoint_url( 'order-received' )){
 			$order_id = wc_get_order_id_by_order_key($_GET['key']);
 			$order = wc_get_order( $order_id );
 			$coupons = $order->get_coupon_codes();
