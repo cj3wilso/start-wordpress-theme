@@ -1,0 +1,27 @@
+$stencil : inherit;
+$opensans : inherit;
+
+$black: #000000;
+$white: #ffffff;
+$accent: #d619b6;
+$textcolor: #545454;
+$darkgrey: darkgray;
+$lightgrey: #f7f7f7;
+$lightgreystroke: #dcddde;
+$red: #ce0027;
+
+$body_bg: #e1e1e1;
+
+/* Min Widths */
+$break-xlarge-desktop-start: "only screen and (min-width: 1441px)";
+$break-large-desktop-start: "only screen and (min-width: 1024px)";
+$break-desktop-start: "only screen and (min-width: 768px)"; 
+$break-mobile-start: "only screen and (min-width: 576px)";
+$break-small-mobile-start: "only screen and (min-width: 380px)";
+
+/* Max Widths */
+$break-xsmall-mobile-max: "(max-width: 379.98px)";
+$break-small-mobile-max: "(max-width: 575.98px)";
+$break-mobile-max: "(max-width: 767px)";
+$break-desktop-max: "(max-width: 1023px)";
+$break-large-desktop-max: "(max-width: 1440px)";
